@@ -722,6 +722,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   gap: 0.75rem;
 }
 
+.overflow-scroll {
+  overflow: scroll;
+}
+
 .overflow-y-hidden {
   overflow-y: hidden;
 }
