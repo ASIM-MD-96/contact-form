@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.error-border {
+  @apply border-red;
+}
+
+.general1 {
+  @apply bg-green-400/25;
+}
+
+.support-input {
+  @apply border-red;
+}
+
+.success-border {
+  @apply border-green-700;
+}
+.label {
+  @apply bg-lightGreen;
+}

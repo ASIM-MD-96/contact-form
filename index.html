@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="icon" href="images/favicon-32x32.png" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap"
+      rel="stylesheet"
+    />
+    <title>contact form</title>
+  </head>
+  <body class="overflow-y-hidden">
+    <div class="w-full h-screen bg-lightGreen flex justify-center items-center">
+      <!-- form background -->
+      <div
+        class="form-fill max-w-sm flex flex-col justify-center bg-white rounded-xl md:max-w-4xl p-10"
+      >
+        <!-- header -->
+        <h1 class="text-3xl font-bold font-Karla text-darkGrey capitalize mb-6">
+          contact us
+        </h1>
+        <!-- form  container -->
+        <div class="flex flex-col md:flex-row md:gap-4">
+          <div class="flex flex-col">
+            <label
+              id="firstname"
+              for="Firstname"
+              class="firstname text-lg font-Karla text-darkGrey font-medium"
+              >First Name
+              <span class="text-mediumGreen">*</span>
+            </label>
+            <input
+              type="text"
+              class="firstName w-72 mt-2 p-3 rounded-lg border border-mediumGrey outline-none"
+              required
+            />
+            <p class="firstName-error text-red mt-4 font-Karla hidden">
+              This field is required
+            </p>
+          </div>
+
+          <div class="flex flex-col">
+            <!-- last name -->
+            <label
+              id="lastname"
+              for="lastname"
+              class="mt-6 text-lg font-Karla text-darkGrey font-medium md:mt-0"
+              >Last Name
+              <span class="text-mediumGreen">*</span>
+            </label>
+            <input
+              type="text"
+              class="lastName w-72 mt-2 p-3 rounded-lg border border-mediumGrey outline-none"
+              required
+            />
+            <p class="lastName-error text-red mt-4 font-Karla hidden">
+              This field is required
+            </p>
+          </div>
+        </div>
+        <!-- email -->
+        <div class="flex flex-col">
+          <label
+            id="email"
+            for="email"
+            class="mt-6 text-lg font-Karla text-darkGrey font-medium"
+            >Email Address
+            <span class="text-mediumGreen">*</span>
+          </label>
+          <input
+            type="email"
+            class="email w-72 mt-2 p-3 rounded-lg border border-mediumGrey md:w-full outline-none"
+            required
+          />
+          <p class="email-error mt-4 text-red font-Karla hidden">
+            Please enter a valid email address
+          </p>
+        </div>
+
+        <!-- query -->
+        <div class="query--type">
+          <p class="text-lg text-darkGrey font-Karla font-medium mt-8">
+            Query Type <span class="text-mediumGreen">*</span>
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 mt-4 gap-4">
+          <div class="flex relative">
+            <input
+              type="radio"
+              name="query"
+              value="general"
+              class="ml-4 accent-green-800 cursor-pointer peer absolute mt-6 scale-150"
+            />
+            <label
+              class="border p-4 border-mediumGrey rounded-lg cursor-pointer peer-checked:bg-lightGreen peer-checked:border-mediumGreen w-full"
+            >
+              <span
+                class="text-darkGrey font-semibold text-center items-center ml-6"
+                >General enquiry</span
+              >
+            </label>
+          </div>
+
+          <div class="flex relative">
+            <input
+              type="radio"
+              name="query"
+              value="support"
+              class="ml-4 accent-green-800 cursor-pointer peer absolute mt-6 scale-150"
+            />
+            <label
+              class="border p-4 border-mediumGrey rounded-lg cursor-pointer peer-checked:bg-lightGreen peer-checked:border-mediumGreen w-full"
+            >
+              <span
+                class="text-darkGrey font-semibold text-center items-center ml-6"
+                >Support Enquiry</span
+              >
+            </label>
+          </div>
+        </div>
+
+        <div class="query-error text-red font-normal font-karla hidden">
+          Please select a query type
+        </div>
+
+        <!-- message -->
+        <div class="mt-6 flex flex-col">
+          <p class="mb-2 text-lg font-Karla text-darkGrey font-medium md:mt-0">
+            Message
+            <span class="text-mediumGreen">*</span>
+          </p>
+          <textarea
+            class="border border-mediumGrey h-24 rounded-lg resize-none shadow-inner outline-none"
+            name="textarea"
+            id="textarea"
+            required
+          ></textarea>
+        </div>
+        <!-- checkbox -->
+        <div class="mt-8 flex gap-6 content">
+          <input
+            class="scale-125 accent-green-800 cursor-pointer"
+            type="checkbox"
+            name=""
+            id="consent"
+          />
+          <p
+            class="-mt-0.5 text-left md:text-center font-Karla text-lg text-darkGrey opacity-80"
+          >
+            I consent to being contacted by the team
+            <span class="text-mediumGreen">*</span>
+          </p>
+        </div>
+        <p class="consent-error text-red font-Karla hidden text-lg">
+          To submit this form, please consent to be contacted
+        </p>
+        <button
+          type="submit"
+          class="submit p-4 mt-8 w-full bg-mediumGreen rounded-lg text-white text-lg font-Karla font-semibold hover:bg-emerald-800"
+        >
+          Submit
+        </button>
+      </div>
+      <div
+        class="form-submitted absolute top-4 w-1/2 md:max-w-md md:top-28 bg-darkGrey/90 p-4 rounded-lg hidden"
+      >
+        <h3 class="flex capitalize text-white font-semibold gap-2 mb-2">
+          <img src="images/icon-success-check.svg" alt="" />message sent!
+        </h3>
+        <p class="text-white opacity-60">
+          Thanks for subbmitting the form we'll be touch soon
+        </p>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
