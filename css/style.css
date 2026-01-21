@@ -989,6 +989,10 @@ Ensure the default browser behavior of the `hidden` attribute.
     gap: 1rem;
   }
 
+  .md\:p-0 {
+    padding: 0px;
+  }
+
   .md\:text-center {
     text-align: center;
   }
