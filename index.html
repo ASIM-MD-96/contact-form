@@ -15,11 +15,11 @@
   </head>
   <body class="bg-lightGreen">
     <div
-      class="min-h-screen flex justify-center items-center p-10 md:p-0 md:w-full"
+      class="relative min-h-screen flex justify-center items-center p-10 md:p-0 md:w-full"
     >
       <!-- form background -->
       <div
-        class="form-fill max-w-sm flex flex-col justify-center bg-white rounded-xl md:max-w-4xl p-10"
+        class="max-w-sm flex flex-col justify-center bg-white rounded-xl md:max-w-4xl p-10"
       >
         <!-- header -->
         <h1 class="text-3xl font-bold font-Karla text-darkGrey capitalize mb-6">
@@ -27,6 +27,7 @@
         </h1>
         <!-- form  container -->
         <div class="flex flex-col md:flex-row md:gap-4">
+          <!-- First  name -->
           <div class="flex flex-col">
             <label
               id="firstname"
@@ -45,8 +46,8 @@
             </p>
           </div>
 
+          <!-- last name -->
           <div class="flex flex-col">
-            <!-- last name -->
             <label
               id="lastname"
               for="lastname"
@@ -64,6 +65,7 @@
             </p>
           </div>
         </div>
+
         <!-- email -->
         <div class="flex flex-col">
           <label
@@ -83,14 +85,16 @@
           </p>
         </div>
 
-        <!-- query -->
+        <!-- Query Type -->
         <div class="query--type">
           <p class="text-lg text-darkGrey font-Karla font-medium mt-8">
             Query Type <span class="text-mediumGreen">*</span>
           </p>
         </div>
 
+        <!-- Enquiry container -->
         <div class="grid md:grid-cols-2 mt-4 gap-4">
+          <!-- General enquiry -->
           <div class="flex relative">
             <input
               type="radio"
@@ -108,6 +112,7 @@
             </label>
           </div>
 
+          <!-- Support enquiry -->
           <div class="flex relative">
             <input
               type="radio"
@@ -125,7 +130,7 @@
             </label>
           </div>
         </div>
-
+        <!-- Query--Error -->
         <div class="query-error text-red font-normal font-karla hidden">
           Please select a query type
         </div>
@@ -143,7 +148,8 @@
             required
           ></textarea>
         </div>
-        <!-- checkbox -->
+
+        <!-- Consent container -->
         <div class="mt-8 flex gap-6 content">
           <input
             class="scale-125 accent-green-800 cursor-pointer"
@@ -161,6 +167,8 @@
         <p class="consent-error text-red font-Karla hidden text-lg">
           To submit this form, please consent to be contacted
         </p>
+
+        <!-- Submit button -->
         <button
           type="submit"
           class="submit p-4 mt-8 w-full bg-mediumGreen rounded-lg text-white text-lg font-Karla font-semibold hover:bg-emerald-800"
@@ -168,8 +176,10 @@
           Submit
         </button>
       </div>
+
+      <!-- Success message -->
       <div
-        class="form-submitted absolute top-4 w-1/2 md:max-w-md md:top-28 bg-darkGrey/90 p-4 rounded-lg hidden"
+        class="form-submitted absolute top-11 max-w-xs md:max-w-md md:top-28 bg-darkGrey/90 p-4 rounded-lg"
       >
         <h3 class="flex capitalize text-white font-semibold gap-2 mb-2">
           <img src="images/icon-success-check.svg" alt="" />message sent!

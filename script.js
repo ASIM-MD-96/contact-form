@@ -1,23 +1,15 @@
 const firstName = document.querySelector(".firstName");
 const lastName = document.querySelector(".lastName");
 const email = document.querySelector(".email");
-
+const textarea = document.querySelector("#textarea");
+const consent = document.querySelector("#consent");
 const submitBtn = document.querySelector(".submit");
-
 const firstNameError = document.querySelector(".firstName-error");
 const lastNameError = document.querySelector(".lastName-error");
 const emailError = document.querySelector(".email-error");
-
-const input = document.querySelectorAll("input");
-
 const queryError = document.querySelector(".query-error");
-
-const textarea = document.querySelector("#textarea");
-const consent = document.querySelector("#consent");
 const consentError = document.querySelector(".consent-error");
 const formSubmitted = document.querySelector(".form-submitted");
-const formFill = document.querySelector(".form-fill");
-const radioBorder = document.querySelectorAll(".radio-border");
 
 submitBtn.addEventListener("click", function (e) {
   e.preventDefault();
@@ -26,7 +18,7 @@ submitBtn.addEventListener("click", function (e) {
     firstNameError.classList.remove("hidden");
     firstName.classList.remove("border-mediumGrey");
     firstName.classList.add("error-border");
-    firstName.innerHTML = "";
+
     isValid = false;
   } else {
     firstNameError.classList.add("hidden");
@@ -39,7 +31,7 @@ submitBtn.addEventListener("click", function (e) {
     lastNameError.classList.remove("hidden");
     lastName.classList.remove("border-mediumGrey");
     lastName.classList.add("error-border");
-    lastName.innerHTML = "";
+
     isValid = false;
   } else {
     lastNameError.classList.add("hidden");
@@ -55,8 +47,7 @@ submitBtn.addEventListener("click", function (e) {
     email.classList.add("error-border");
     emailError.classList.remove("hidden");
     email.setAttribute("placeholder", "email@example.com");
-
-    emailValue.innerHTML = "";
+    email.value = "";
     isValid = false;
   } else {
     email.classList.remove("error-border");
@@ -64,15 +55,23 @@ submitBtn.addEventListener("click", function (e) {
     emailError.classList.add("hidden");
   }
 
-  if (!input[3].checked && !input[4].checked) {
+  // if (!input[3].checked && !input[4].checked) {
+  //   queryError.classList.remove("hidden");
+  //   isValid = false;
+  // } else {
+  //   queryError.classList.add("hidden");
+  // }
+
+  const selectedQuery = document.querySelector('input[name="query"]:checked');
+  console.log(selectedQuery);
+  if (!selectedQuery) {
     queryError.classList.remove("hidden");
-    input.innerHTML = "";
     isValid = false;
   } else {
     queryError.classList.add("hidden");
   }
 
-  if (!textarea.value) {
+  if (textarea.value.trim() === "") {
     textarea.classList.add("error-border");
     isValid = false;
   } else {
@@ -83,11 +82,25 @@ submitBtn.addEventListener("click", function (e) {
   if (!consent.checked) {
     consentError.classList.remove("hidden");
     isValid = false;
-    consent.innerHTML = "";
   } else {
     consentError.classList.add("hidden");
   }
   if (isValid) {
     formSubmitted.classList.remove("hidden");
+    // Reset form
+    firstName.value = "";
+    lastName.value = "";
+    textarea.value = "";
+    email.value = "";
+    consent.checked = false;
+    firstName.classList.remove("success-border");
+    lastName.classList.remove("success-border");
+    email.classList.remove("success-border");
+    textarea.classList.remove("success-border");
+
+    // set timeout
+    setTimeout(() => {
+      formSubmitted.classList.add("hidden");
+    }, 5000);
   }
 });
