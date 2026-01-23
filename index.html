@@ -15,13 +15,27 @@
   </head>
   <body class="bg-lightGreen">
     <div
-      class="relative min-h-screen flex justify-center items-center p-10 md:p-0 md:w-full"
+      class="min-h-screen flex flex-col justify-center items-center p-10 md:p-16 md:w-full"
     >
+      <!-- Success message -->
+      <div class="flex justify-center">
+        <div
+          class="form-submitted max-w-xs md:max-w-md bg-darkGrey/90 p-4 rounded-lg"
+        >
+          <h3 class="flex capitalize text-white font-semibold gap-2 mb-2">
+            <img src="images/icon-success-check.svg" alt="" />message sent!
+          </h3>
+          <p class="text-white opacity-60">
+            Thanks for subbmitting the form we'll be touch soon
+          </p>
+        </div>
+      </div>
+
       <!-- form background -->
       <div
         class="max-w-sm flex flex-col justify-center bg-white rounded-xl md:max-w-4xl p-10"
       >
-        <!-- header -->
+        <!--form header -->
         <h1 class="text-3xl font-bold font-Karla text-darkGrey capitalize mb-6">
           contact us
         </h1>
@@ -175,18 +189,6 @@
         >
           Submit
         </button>
-      </div>
-
-      <!-- Success message -->
-      <div
-        class="form-submitted absolute top-11 max-w-xs md:max-w-md md:top-28 bg-darkGrey/90 p-4 rounded-lg"
-      >
-        <h3 class="flex capitalize text-white font-semibold gap-2 mb-2">
-          <img src="images/icon-success-check.svg" alt="" />message sent!
-        </h3>
-        <p class="text-white opacity-60">
-          Thanks for subbmitting the form we'll be touch soon
-        </p>
       </div>
     </div>
     <script src="script.js"></script>
